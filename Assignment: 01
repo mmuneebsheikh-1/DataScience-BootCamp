@@ -1,0 +1,174 @@
+1.	Write a program to iterate the first 10 numbers, and in each iteration, print the sum of the current and previous number.
+Sol)   Input:
+          for x in range(10):
+          print(x+(x-1))
+
+         Output:
+-1
+1
+3
+5
+7
+9
+11
+13
+15
+17
+
+
+2.	Print the following pattern 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5
+Sol)   Input:
+for i in range(1, 6):        
+    for j in range(1, i + 1):      
+        print(i, end="")           
+               print()         
+
+                 Output:
+1
+22
+333
+4444
+55555
+
+
+
+
+3.	  List is given below:
+numbers = [12, 75, 150, 180, 145, 525, 50]
+Write a program to display only those numbers from a list that satisfy the following
+conditions
+i. The number must be divisible by five
+ii. If the number is greater than 150, then skip it and move to the next number
+              iii. If the number is greater than 500, then stop the loop.
+Sol)   Input:
+a = [12, 75, 150, 180, 145, 525, 50]
+b = []
+for i in a:
+    if i > 150:
+        if i > 500:
+            break
+        continue
+    if i % 5 == 0:
+        b.append(i)
+        
+                 print(b)
+
+                 Output:
+[75, 150, 145]
+
+
+4.	Display Fibonacci series up to 10 terms
+The Fibonacci Sequence is a series of numbers. The next number is found by adding
+up the two numbers before it. The first two numbers are 0 and 1.
+For example, 0, 1, 1, 2, 3, 5, 8, 13, 21. The next number in this series above is
+               13+21 = 34.
+
+Sol)   Input:
+n_1 = 0  
+n_2 = 1  
+count = 0 
+n_terms = [0,1,2,3,4,5,6,7,8,9,10]
+if n_terms == 1:  
+    print ("The Fibonacci sequence of the numbers up to", n_terms, ": ")  
+    print(n_1)  
+# Then we will generate Fibonacci sequence of number  
+else:  
+    print ("The fibonacci sequence of the numbers is:")  
+    while count < n_terms[10]:  
+        print(n_1)  
+        nth = n_1 + n_2  
+       # At last, we will update values  
+        n_1 = n_2  
+        n_2 = nth  
+                      count += 1   
+                     Output:
+The fibonacci sequence of the numbers is:
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+
+5.	Write a program to use the loop to find the factorial of a given number.
+The factorial (symbol: !) means to multiply all whole numbers from the chosen number
+down to 1.
+For example: calculate the factorial of 5
+5! = 5 × 4 × 3 × 2 × 1 = 120
+Sol)   Input:
+          num = int(input("Enter a number: "))    
+factorial = 1    
+if num < 0:    
+   print(" Factorial does not exist for negative numbers")    
+elif num == 0:    
+   print("The factorial of 0 is 1")    
+else:    
+   for i in range(1,num + 1):    
+       factorial = factorial*i    
+   print("The factorial of",num,"is",factorial)   
+Output:
+Enter a number:  8
+The factorial of 8 is 40320
+
+
+
+
+
+6.	Write a program to iterate a given list and count the occurrence of each element and
+print to show the count of each element.
+sample_list = [11, 45, 8, 11, 23, 45, 23, 45, 89]
+Expected Output:
+              Printing count of each item 11: 2, 45: 3, 8: 1, 23: 2, 89: 1
+
+Sol)   Input:
+         sample_list = [11, 45, 8, 11, 23, 45, 23, 45, 89]
+print("Original list ", sample_list)
+
+count_dict = dict()
+for item in sample_list:
+    if item in count_dict:
+        count_dict[item] += 1
+    else:
+        count_dict[item] = 1
+
+print("Printing count of each item  ", count_dict)
+ 
+                        Output:
+Original list  [11, 45, 8, 11, 23, 45, 23, 45, 89]
+Printing count of each item   {11: 2, 45: 3, 8: 1, 23: 2, 89: 1}
+
+
+7.	Given two lists, l1 and l2, write a program to create a third list l3 by picking an
+odd-index element from the list l1 and even index elements from the list l2.
+Given:
+l1 = [3, 6, 9, 12, 15, 18, 21]
+l2 = [4, 8, 12, 16, 20, 24, 28]
+Sol)   Input:
+         list1 = [3, 6, 9, 12, 15, 18, 21]
+list2 = [4, 8, 12, 16, 20, 24, 28]
+res = list()
+
+odd_elements = list1[1::2]
+print("Element at odd-index positions from list one")
+print(odd_elements)
+
+even_elements = list2[0::2]
+print("Element at even-index positions from list two")
+print(even_elements)
+
+print("Printing Final third list")
+res.extend(odd_elements)
+res.extend(even_elements)
+print(res)
+          Output:
+        Element at odd-index positions from list one
+[6, 12, 18]
+Element at even-index positions from list two
+[4, 12, 20, 28]
+Printing Final third list
+[6, 12, 18, 4, 12, 20, 28]
+
